@@ -49,3 +49,27 @@ or
 ```bash
 cucumber
 ```
+* To see available options, run:
+```bash
+./rdu.rb -h
+```
+
+### Data output
+The output is JSON-formatted as in the following example:
+```bash
+{
+  "files": [
+    {
+      "path": "dir1/file1.txt",
+      "size": 1
+    }
+  ]
+}
+```
+By default, `rdu` will pretty-print JSON output. In order to output a JSON string, which is useful for post-processing in other programes, you can make use of the `-u` or `--ugly` switches.
+
+### Post-processing
+Rather than adding data manipulation and formatting functionality to the program, a design decision was made to keep the program simple and produce "pipe-friendly" output for consumption/processing by other programs. For example, a common operation may be to sort the list of files in descending order by size. This, along with other manipulations of JSON, could be accomplished by using the excellent [jq](https://stedolan.github.io/jq/) tool:
+```bash
+./rdu.rb -u -d /tmp/ | jq '.files | sort_by(.size) | reverse'
+```
