@@ -5,5 +5,5 @@ Feature: Ugly list files and sizes
     When I successfully run `./rdu.rb -d dir1 -u`
     Then the stdout should contain:
     """
-    {"files":[{"dir1/file1.txt":1}]}
+    {"files":[{"path":"dir1/file1.txt","size":1}]}
     """

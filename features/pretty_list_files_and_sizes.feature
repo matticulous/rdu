@@ -8,7 +8,8 @@ Feature: Pretty list files and sizes
     {
       "files": [
         {
-          "dir1/file1.txt": 1
+          "path": "dir1/file1.txt",
+          "size": 1
         }
       ]
     }
@@ -23,7 +24,8 @@ Feature: Pretty list files and sizes
     {
       "files": [
         {
-          "dir1/file1.txt": 100
+          "path": "dir1/file1.txt",
+          "size": 100
         }
       ]
     }
@@ -39,10 +41,12 @@ Feature: Pretty list files and sizes
     {
       "files": [
         {
-          "dir1/file1.txt": 1
+          "path": "dir1/file1.txt",
+          "size": 1
         },
         {
-          "dir1/subdir1/file2.txt": 2
+          "path": "dir1/subdir1/file2.txt",
+          "size": 2
         }
       ]
     }

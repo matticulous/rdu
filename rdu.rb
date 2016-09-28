@@ -30,7 +30,7 @@ begin
   # Build a hash of files keyed by path with a value of size in bytes
   Find.find(options[:dir]) do |path|
     if !FileTest.directory?(path) && FileTest.exist?(path)
-      file_hash[:files] << { path => FileTest.size(path)}
+      file_hash[:files] << { :path => path, :size => FileTest.size(path)}
     end
   end
   # Print the files hash to JSON
